@@ -17,20 +17,20 @@ import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
 
 public class LoadYelpToKafka {
-	String fileDir = "/mnt/scratch/simulatedDataSource/review_2010_order/part-r-00000";
+	String fileDir = "/home/cloudera/yelp/business.json";
 	
 	public void run() {
 		try {
 			Properties props = new Properties();
 //			props.put("metadata.broker.list", "sandbox.hortonworks.com:6667");
 //			props.put("zk.connect", "localhost:2181");
-			props.put("metadata.broker.list", "hadoop-m.c.mpcs53013-2015.internal:6667");
-			props.put("zk.connect", "hadoop-w-1.c.mpcs53013-2015.internal:2181,hadoop-w-0.c.mpcs53013-2015.internal:2181,hadoop-m.c.mpcs53013-2015.internal:2181");
+			props.put("metadata.broker.list", "localhost:9092");
+			props.put("zk.connect", "localhost:2181,localhost:2181,localhost:2181");
 			props.put("serializer.class", "kafka.serializer.StringEncoder");
 			props.put("request.required.acks", "1");
 
 			//setup Producer Config using this prop
-			String TOPIC = "yelp_reviews";
+			String TOPIC = "yelp_reviews2";
 			ProducerConfig config = new ProducerConfig(props);
 
 			
