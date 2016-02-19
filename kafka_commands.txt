@@ -8,6 +8,11 @@ bin/kafka-console-producer.sh --broker-list localst:9092 --topic yelp_reviews
 
 bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic yelp_reviews --from-beginning
 
+--navigate to yelp page
+
+mvn clean pacakge
+
+java -cp target/uber-YelpLoadToKafka-0.0.1-SNAPSHOT.jar com.datalabla.LoadYelpToKafka
 
 //----------------------------------------
 ./kafka-topics.sh --create --zookeeper hadoop-w-1.c.mpcs53013-2015.internal:2181 --replication-factor 1 --partitions 1 --topic yelp_reviews
