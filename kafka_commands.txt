@@ -1,3 +1,15 @@
+//running following command on centos/cloudera vm
+
+bin/kafka-server-start.sh config/server.properties
+
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic yelp_reviews
+
+bin/kafka-console-producer.sh --broker-list localst:9092 --topic yelp_reviews
+
+bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic yelp_reviews --from-beginning
+
+
+//----------------------------------------
 ./kafka-topics.sh --create --zookeeper hadoop-w-1.c.mpcs53013-2015.internal:2181 --replication-factor 1 --partitions 1 --topic yelp_reviews
 
 ./kafka-console-producer.sh --broker-list hadoop-m.c.mpcs53013-2015.internal:6667 --topic yelp_reviews
