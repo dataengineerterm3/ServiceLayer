@@ -2,11 +2,11 @@
 
 bin/kafka-server-start.sh config/server.properties
 
-bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic yelp_reviews
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic yelp_reviews2
 
-bin/kafka-console-producer.sh --broker-list localst:9092 --topic yelp_reviews
+bin/kafka-console-producer.sh --broker-list localst:9092 --topic yelp_reviews2
 
-bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic yelp_reviews --from-beginning
+bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic yelp_reviews2 --from-beginning
 
 --navigate to yelp page
 
