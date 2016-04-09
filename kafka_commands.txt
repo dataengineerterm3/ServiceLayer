@@ -1,3 +1,11 @@
+// install kafka
+sudo useradd -m kafka
+
+wget http://www.us.apache.org/dist/kafka/0.8.2.2/kafka_2.9.2-0.8.2.2.tgz
+
+tar xvzf kafka_2.9.2-0.8.2.2.tgz --strip 1
+
+
 //running following command on centos/cloudera vm
 
 bin/kafka-server-start.sh config/server.properties
